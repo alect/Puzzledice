@@ -1,0 +1,543 @@
+<Database>
+<Properties>
+<BooleanProperty name="npc" value="false"/>
+<ItemListProperty name="gives">
+</ItemListProperty>
+<TextProperty name="sprite" text=""/>
+<ItemListProperty name="givenby">
+</ItemListProperty>
+<StringPairListProperty name="madeby">
+</StringPairListProperty>
+<StringListProperty name="cooked">
+</StringListProperty>
+<TextProperty name="keyname" text=""/>
+<BooleanProperty name="destroyoncombine" value="false"/>
+<StringListProperty name="temperature">
+</StringListProperty>
+<IntegerProperty name="size" value="0"/>
+<StringListProperty name="emotion">
+</StringListProperty>
+<ItemListProperty name="requests">
+</ItemListProperty>
+<TextProperty name="fulfilledtext" text=""/>
+<StringListProperty name="livingness">
+</StringListProperty>
+<TextProperty name="description" text=""/>
+<BooleanProperty name="carryable" value="false"/>
+<BooleanProperty name="container" value="false"/>
+<StringListProperty name="shinyness">
+</StringListProperty>
+<TextProperty name="requesttext" text=""/>
+<IntegerProperty name="capacity" value="0"/>
+<StringListProperty name="mutables">
+</StringListProperty>
+<BooleanProperty name="key" value="false"/>
+<StringPairListProperty name="changes">
+</StringPairListProperty>
+<StringListProperty name="pointyness">
+</StringListProperty>
+</Properties>
+<Items>
+<Item name="oxygen">
+<ItemListProperty name="givenby">
+<ItemReference name="wizard"/>
+</ItemListProperty>
+<BooleanProperty name="destroyoncombine" value="true"/>
+<TextProperty name="description" text="Some oxygen just floating there."/>
+<IntegerProperty name="capacity" value="5"/>
+</Item>
+<Item name="frog">
+<TextProperty name="sprite" text="frog"/>
+<StringPairListProperty name="madeby">
+<StringPair string1="prince" string2="staff"/>
+</StringPairListProperty>
+<StringListProperty name="cooked">
+<String string="raw"/>
+<String string="cooked"/>
+</StringListProperty>
+<BooleanProperty name="destroyoncombine" value="true"/>
+<IntegerProperty name="size" value="0"/>
+<StringListProperty name="livingness">
+<String string="dead"/>
+<String string="alive"/>
+</StringListProperty>
+<TextProperty name="description" text="A simple Bull-frog."/>
+<BooleanProperty name="carryable" value="true"/>
+<IntegerProperty name="capacity" value="5"/>
+<StringListProperty name="mutables">
+<String string="cooked"/>
+<String string="livingness"/>
+</StringListProperty>
+</Item>
+<Item name="microwave">
+<TextProperty name="sprite" text="microwave"/>
+<StringPairListProperty name="madeby">
+<StringPair string1="refrigerator" string2="staff"/>
+</StringPairListProperty>
+<BooleanProperty name="destroyoncombine" value="false"/>
+<IntegerProperty name="size" value="1"/>
+<TextProperty name="description" text="A powerful 2222 watt microwave."/>
+<IntegerProperty name="capacity" value="5"/>
+<BooleanProperty name="key" value="false"/>
+<StringPairListProperty name="changes">
+<StringPair string1="temperature" string2="hot"/>
+<StringPair string1="livingness" string2="dead"/>
+<StringPair string1="cooked" string2="cooked"/>
+</StringPairListProperty>
+</Item>
+<Item name="wizard">
+<BooleanProperty name="npc" value="true"/>
+<TextProperty name="sprite" text="wizard"/>
+<StringPairListProperty name="madeby">
+<StringPair string1="hat" string2="staff"/>
+</StringPairListProperty>
+<BooleanProperty name="destroyoncombine" value="true"/>
+<StringListProperty name="temperature">
+</StringListProperty>
+<IntegerProperty name="size" value="1"/>
+<StringListProperty name="emotion">
+</StringListProperty>
+<ItemListProperty name="requests">
+<ItemReference name="water"/>
+<ItemReference name="frog"/>
+<ItemReference name="staff"/>
+<ItemReference name="prince"/>
+<ItemReference name="fire"/>
+<ItemReference name="book"/>
+<ItemReference name="hat"/>
+</ItemListProperty>
+<StringListProperty name="livingness">
+<String string="dead"/>
+<String string="alive"/>
+</StringListProperty>
+<TextProperty name="fulfilledtext" text="Brilliant. A thousand blessings upon you!"/>
+<TextProperty name="description" text="The powerful sub-wizard. Absolutely fabulous!"/>
+<TextProperty name="requesttext" text="Greetings Sandwitch. I need a PROPERTY REQUEST for my experiments. Succeed, and I shall bestow upon you a REWARD."/>
+<StringListProperty name="mutables">
+<String string="livingness"/>
+</StringListProperty>
+</Item>
+<Item name="hat">
+<TextProperty name="sprite" text="hat"/>
+<ItemListProperty name="givenby">
+<ItemReference name="wizard"/>
+<ItemReference name="princess"/>
+</ItemListProperty>
+<IntegerProperty name="size" value="5"/>
+<TextProperty name="description" text="A wizard's hat."/>
+<BooleanProperty name="carryable" value="true"/>
+<BooleanProperty name="container" value="true"/>
+<StringListProperty name="shinyness">
+<String string="shiny"/>
+<String string="dirty"/>
+</StringListProperty>
+<TextProperty name="requesttext" text=""/>
+<IntegerProperty name="capacity" value="5"/>
+<StringListProperty name="mutables">
+<String string="shinyness"/>
+<String string="pointyness"/>
+</StringListProperty>
+<StringListProperty name="pointyness">
+<String string="dull"/>
+<String string="pointy"/>
+</StringListProperty>
+<StringPairListProperty name="changes">
+</StringPairListProperty>
+</Item>
+<Item name="powdered key">
+<TextProperty name="sprite" text="powderedkey"/>
+<ItemListProperty name="givenby">
+<ItemReference name="wizard"/>
+<ItemReference name="prince"/>
+<ItemReference name="princess"/>
+<ItemReference name="commoner"/>
+</ItemListProperty>
+<BooleanProperty name="destroyoncombine" value="true"/>
+<BooleanProperty name="carryable" value="true"/>
+<TextProperty name="description" text="A powdered key. Just add water."/>
+<IntegerProperty name="capacity" value="5"/>
+</Item>
+<Item name="slippers">
+<TextProperty name="sprite" text="slippers"/>
+<ItemListProperty name="givenby">
+<ItemReference name="wizard"/>
+<ItemReference name="prince"/>
+<ItemReference name="princess"/>
+</ItemListProperty>
+<BooleanProperty name="destroyoncombine" value="true"/>
+<IntegerProperty name="size" value="0"/>
+<StringListProperty name="shinyness">
+<String string="dirty"/>
+<String string="shiny"/>
+</StringListProperty>
+<TextProperty name="description" text="A pair of silver slippers."/>
+<BooleanProperty name="carryable" value="true"/>
+<IntegerProperty name="capacity" value="5"/>
+<StringListProperty name="mutables">
+<String string="shinyness"/>
+</StringListProperty>
+</Item>
+<Item name="ashes">
+<TextProperty name="sprite" text="ashes"/>
+<ItemListProperty name="givenby">
+<ItemReference name="commoner"/>
+</ItemListProperty>
+<StringPairListProperty name="madeby">
+<StringPair string1="book" string2="fire"/>
+</StringPairListProperty>
+<StringListProperty name="temperature">
+<String string="hot"/>
+<String string="cold"/>
+</StringListProperty>
+<BooleanProperty name="carryable" value="true"/>
+<TextProperty name="description" text="Some sooty ashes. "/>
+<StringListProperty name="mutables">
+<String string="temperature"/>
+</StringListProperty>
+<StringPairListProperty name="changes">
+<StringPair string1="shinyness" string2="dirty"/>
+</StringPairListProperty>
+</Item>
+<Item name="kiss">
+<TextProperty name="sprite" text="kiss"/>
+<StringPairListProperty name="madeby">
+</StringPairListProperty>
+<ItemListProperty name="givenby">
+<ItemReference name="princess"/>
+</ItemListProperty>
+<BooleanProperty name="destroyoncombine" value="true"/>
+<IntegerProperty name="size" value="0"/>
+<StringListProperty name="emotion">
+<String string="loving"/>
+<String string="melancholy"/>
+<String string="icy"/>
+</StringListProperty>
+<BooleanProperty name="carryable" value="false"/>
+<TextProperty name="description" text="True love's disembodied kiss."/>
+<IntegerProperty name="capacity" value="5"/>
+<StringListProperty name="mutables">
+<String string="emotion"/>
+</StringListProperty>
+</Item>
+<Item name="staff">
+<TextProperty name="sprite" text="staff"/>
+<ItemListProperty name="givenby">
+<ItemReference name="prince"/>
+<ItemReference name="wizard"/>
+</ItemListProperty>
+<StringPairListProperty name="madeby">
+</StringPairListProperty>
+<BooleanProperty name="destroyoncombine" value="false"/>
+<IntegerProperty name="size" value="0"/>
+<TextProperty name="description" text="A trusty magical staff. No longer under warranty."/>
+<BooleanProperty name="carryable" value="true"/>
+<IntegerProperty name="capacity" value="5"/>
+</Item>
+<Item name="prince">
+<BooleanProperty name="npc" value="true"/>
+<TextProperty name="sprite" text="prince"/>
+<StringPairListProperty name="madeby">
+<StringPair string1="kiss" string2="frog"/>
+</StringPairListProperty>
+<ItemListProperty name="givenby">
+<ItemReference name="wizard"/>
+</ItemListProperty>
+<BooleanProperty name="destroyoncombine" value="true"/>
+<IntegerProperty name="size" value="1"/>
+<StringListProperty name="emotion">
+<String string="melancholy"/>
+<String string="icy"/>
+<String string="loving"/>
+</StringListProperty>
+<ItemListProperty name="requests">
+<ItemReference name="kiss"/>
+<ItemReference name="water"/>
+<ItemReference name="princess"/>
+<ItemReference name="wizard"/>
+<ItemReference name="book"/>
+</ItemListProperty>
+<TextProperty name="fulfilledtext" text="Fantastic! Take your reward!"/>
+<TextProperty name="description" text="A Prince of Lunch. Haughty."/>
+<TextProperty name="requesttext" text="Greetings vassal. I seek a PROPERTY REQUEST. In return, I offer this REWARD."/>
+<IntegerProperty name="capacity" value="1"/>
+<StringListProperty name="mutables">
+<String string="emotion"/>
+</StringListProperty>
+</Item>
+<Item name="jar">
+<TextProperty name="sprite" text="jar"/>
+<ItemListProperty name="givenby">
+<ItemReference name="prince"/>
+</ItemListProperty>
+<TextProperty name="keyname" text=""/>
+<BooleanProperty name="destroyoncombine" value="false"/>
+<IntegerProperty name="size" value="1"/>
+<StringListProperty name="emotion">
+</StringListProperty>
+<BooleanProperty name="container" value="true"/>
+<TextProperty name="description" text="A basic jar. Not magic at all. "/>
+<BooleanProperty name="carryable" value="true"/>
+<IntegerProperty name="capacity" value="5"/>
+</Item>
+<Item name="ice">
+<TextProperty name="sprite" text="ice"/>
+<ItemListProperty name="givenby">
+<ItemReference name="wizard"/>
+<ItemReference name="prince"/>
+</ItemListProperty>
+<StringPairListProperty name="madeby">
+</StringPairListProperty>
+<BooleanProperty name="destroyoncombine" value="true"/>
+<BooleanProperty name="carryable" value="true"/>
+<TextProperty name="description" text="A big block of ice."/>
+<IntegerProperty name="capacity" value="5"/>
+<StringPairListProperty name="changes">
+<StringPair string1="temperature" string2="cold"/>
+</StringPairListProperty>
+</Item>
+<Item name="bread">
+<TextProperty name="sprite" text="bread"/>
+<ItemListProperty name="givenby">
+<ItemReference name="wizard"/>
+<ItemReference name="prince"/>
+<ItemReference name="princess"/>
+<ItemReference name="commoner"/>
+</ItemListProperty>
+<BooleanProperty name="carryable" value="true"/>
+<TextProperty name="description" text="A delicious slice of bread."/>
+<IntegerProperty name="capacity" value="2"/>
+</Item>
+<Item name="key">
+<TextProperty name="sprite" text="key"/>
+<ItemListProperty name="givenby">
+<ItemReference name="prince"/>
+<ItemReference name="wizard"/>
+<ItemReference name="princess"/>
+<ItemReference name="commoner"/>
+</ItemListProperty>
+<StringPairListProperty name="madeby">
+<StringPair string1="powdered key" string2="water"/>
+</StringPairListProperty>
+<TextProperty name="keyname" text="key"/>
+<IntegerProperty name="size" value="0"/>
+<TextProperty name="description" text="A basic key."/>
+<BooleanProperty name="carryable" value="true"/>
+<IntegerProperty name="capacity" value="5"/>
+<BooleanProperty name="key" value="true"/>
+</Item>
+<Item name="knife">
+<TextProperty name="sprite" text="knife"/>
+<ItemListProperty name="givenby">
+<ItemReference name="commoner"/>
+<ItemReference name="princess"/>
+</ItemListProperty>
+<StringListProperty name="shinyness">
+</StringListProperty>
+<TextProperty name="description" text="A sharp knife."/>
+<BooleanProperty name="carryable" value="true"/>
+<IntegerProperty name="capacity" value="5"/>
+<StringPairListProperty name="changes">
+<StringPair string1="livingness" string2="dead"/>
+<StringPair string1="pointyness" string2="pointy"/>
+</StringPairListProperty>
+</Item>
+<Item name="toppings">
+<TextProperty name="sprite" text="toppings"/>
+<ItemListProperty name="givenby">
+<ItemReference name="wizard"/>
+<ItemReference name="prince"/>
+<ItemReference name="princess"/>
+<ItemReference name="commoner"/>
+</ItemListProperty>
+<BooleanProperty name="carryable" value="true"/>
+<TextProperty name="description" text="Delicious toppings."/>
+</Item>
+<Item name="water">
+<TextProperty name="sprite" text="water"/>
+<StringPairListProperty name="madeby">
+<StringPair string1="hydrogen" string2="oxygen"/>
+<StringPair string1="ice" string2="fire"/>
+</StringPairListProperty>
+<BooleanProperty name="destroyoncombine" value="true"/>
+<StringListProperty name="temperature">
+<String string="cold"/>
+<String string="hot"/>
+</StringListProperty>
+<IntegerProperty name="size" value="0"/>
+<StringListProperty name="emotion">
+</StringListProperty>
+<ItemListProperty name="requests">
+</ItemListProperty>
+<TextProperty name="fulfilledtext" text=""/>
+<TextProperty name="description" text="Clear spring water."/>
+<IntegerProperty name="capacity" value="5"/>
+<StringListProperty name="mutables">
+<String string="temperature"/>
+</StringListProperty>
+<StringPairListProperty name="changes">
+<StringPair string1="wetness" string2="wet"/>
+</StringPairListProperty>
+</Item>
+<Item name="lock">
+<TextProperty name="sprite" text="lock"/>
+<IntegerProperty name="size" value="6"/>
+<TextProperty name="description" text="An intrusive locked door."/>
+<BooleanProperty name="carryable" value="false"/>
+</Item>
+<Item name="magic jar">
+<TextProperty name="sprite" text="jar"/>
+<ItemListProperty name="givenby">
+<ItemReference name="prince"/>
+<ItemReference name="wizard"/>
+</ItemListProperty>
+<StringPairListProperty name="madeby">
+<StringPair string1="jar" string2="staff"/>
+</StringPairListProperty>
+<IntegerProperty name="size" value="5"/>
+<BooleanProperty name="container" value="true"/>
+<TextProperty name="description" text="A magic jar that can hold almost anything."/>
+<BooleanProperty name="carryable" value="true"/>
+<IntegerProperty name="capacity" value="5"/>
+</Item>
+<Item name="refrigerator">
+<TextProperty name="sprite" text="fridge"/>
+<StringPairListProperty name="madeby">
+<StringPair string1="microwave" string2="staff"/>
+</StringPairListProperty>
+<IntegerProperty name="size" value="2"/>
+<TextProperty name="description" text="Standard Ice-Box. Product of Monopsomancy"/>
+<BooleanProperty name="carryable" value="false"/>
+<TextProperty name="requesttext" text=""/>
+<IntegerProperty name="capacity" value="5"/>
+<StringPairListProperty name="changes">
+<StringPair string1="emotion" string2="icy"/>
+<StringPair string1="temperature" string2="cold"/>
+</StringPairListProperty>
+</Item>
+<Item name="fire">
+<TextProperty name="sprite" text="fire"/>
+<StringPairListProperty name="madeby">
+<StringPair string1="oxygen" string2="microwave"/>
+</StringPairListProperty>
+<BooleanProperty name="destroyoncombine" value="false"/>
+<StringListProperty name="temperature">
+<String string="hot"/>
+</StringListProperty>
+<IntegerProperty name="size" value="0"/>
+<ItemListProperty name="requests">
+</ItemListProperty>
+<StringListProperty name="livingness">
+</StringListProperty>
+<BooleanProperty name="carryable" value="false"/>
+<TextProperty name="description" text="A burning flame. Very pretty. "/>
+<IntegerProperty name="capacity" value="5"/>
+<StringPairListProperty name="changes">
+<StringPair string1="temperature" string2="hot"/>
+<StringPair string1="emotion" string2="loving"/>
+<StringPair string1="cooked" string2="cooked"/>
+</StringPairListProperty>
+</Item>
+<Item name="princess">
+<BooleanProperty name="npc" value="true"/>
+<ItemListProperty name="gives">
+</ItemListProperty>
+<TextProperty name="sprite" text="princess"/>
+<StringPairListProperty name="madeby">
+<StringPair string1="commoner" string2="slippers"/>
+</StringPairListProperty>
+<IntegerProperty name="size" value="1"/>
+<ItemListProperty name="requests">
+<ItemReference name="frog"/>
+<ItemReference name="prince"/>
+<ItemReference name="refrigerator"/>
+<ItemReference name="microwave"/>
+<ItemReference name="slippers"/>
+<ItemReference name="book"/>
+</ItemListProperty>
+<TextProperty name="fulfilledtext" text="Outstanding. Take your well deserved REWARD."/>
+<TextProperty name="description" text="A princess of some kind. "/>
+<TextProperty name="requesttext" text="Hello! I seek a heroic individual to find for me a PROPERTY REQUEST. You'll find I'm quite generous."/>
+<IntegerProperty name="capacity" value="0"/>
+</Item>
+<Item name="sandwich">
+<TextProperty name="sprite" text="sandwich"/>
+<ItemListProperty name="givenby">
+<ItemReference name="prince"/>
+<ItemReference name="wizard"/>
+<ItemReference name="commoner"/>
+<ItemReference name="princess"/>
+</ItemListProperty>
+<StringPairListProperty name="madeby">
+<StringPair string1="bread" string2="bread with toppings"/>
+</StringPairListProperty>
+<BooleanProperty name="destroyoncombine" value="false"/>
+<IntegerProperty name="size" value="0"/>
+<ItemListProperty name="requests">
+</ItemListProperty>
+<TextProperty name="fulfilledtext" text=""/>
+<TextProperty name="description" text="The fabled sandwich, target of your quest."/>
+<BooleanProperty name="carryable" value="true"/>
+</Item>
+<Item name="commoner">
+<BooleanProperty name="npc" value="true"/>
+<ItemListProperty name="gives">
+<ItemReference name="water"/>
+<ItemReference name="frog"/>
+<ItemReference name="microwave"/>
+<ItemReference name="refrigerator"/>
+<ItemReference name="kiss"/>
+<ItemReference name="sandwich"/>
+</ItemListProperty>
+<TextProperty name="sprite" text="commoner"/>
+<BooleanProperty name="destroyoncombine" value="true"/>
+<IntegerProperty name="size" value="1"/>
+<ItemListProperty name="requests">
+<ItemReference name="water"/>
+<ItemReference name="oxygen"/>
+<ItemReference name="frog"/>
+<ItemReference name="microwave"/>
+<ItemReference name="refrigerator"/>
+<ItemReference name="ice"/>
+<ItemReference name="hydrogen"/>
+<ItemReference name="knife"/>
+<ItemReference name="ashes"/>
+</ItemListProperty>
+<TextProperty name="fulfilledtext" text="The deal is done!"/>
+<TextProperty name="description" text="A peasant girl, covered in cinders."/>
+<TextProperty name="requesttext" text="I found this REWARD. I'll trade it for a PROPERTY REQUEST if you were willing."/>
+</Item>
+<Item name="hydrogen">
+<TextProperty name="sprite" text="hydrogen"/>
+<ItemListProperty name="givenby">
+<ItemReference name="wizard"/>
+</ItemListProperty>
+<BooleanProperty name="destroyoncombine" value="true"/>
+<TextProperty name="description" text="Some hydrogen just floating there."/>
+<IntegerProperty name="capacity" value="5"/>
+</Item>
+<Item name="book">
+<TextProperty name="sprite" text="book"/>
+<ItemListProperty name="givenby">
+<ItemReference name="prince"/>
+<ItemReference name="wizard"/>
+</ItemListProperty>
+<BooleanProperty name="destroyoncombine" value="true"/>
+<BooleanProperty name="carryable" value="true"/>
+<TextProperty name="description" text="A mysterious book of magic and/or algebra. "/>
+</Item>
+<Item name="bread with toppings">
+<TextProperty name="sprite" text="breadwithtoppings"/>
+<StringPairListProperty name="madeby">
+<StringPair string1="bread" string2="toppings"/>
+</StringPairListProperty>
+<ItemListProperty name="givenby">
+<ItemReference name="wizard"/>
+<ItemReference name="princess"/>
+<ItemReference name="commoner"/>
+<ItemReference name="prince"/>
+</ItemListProperty>
+<BooleanProperty name="carryable" value="true"/>
+<TextProperty name="description" text="Delicious bread with delicious toppings. Almost a sandwich."/>
+</Item>
+</Items>
+</Database>

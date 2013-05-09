@@ -2,12 +2,12 @@
 *.pidb
 *.sln
 .DS_Store
-Library/*
-Publish/*
+Unity/Sandwitch/Library
+Unity/Sandwitch/Publish
 Temp/*
 *.userprefs
 *.unityproj
-TK2DROOT
+Unity/Sandwitch/Assets/TK2DROOT
 
 bin
 .metadata

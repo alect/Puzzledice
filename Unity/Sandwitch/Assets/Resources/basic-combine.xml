@@ -1,0 +1,17 @@
+<puzzleMap>
+<areas>
+<area name="dirt-1" startArea="true">
+<door name="grass-2"/>
+</area>
+<area name="grass-2" startArea="false">
+<door name="dirt-1"/>
+<inputArea name="dirt-1"/>
+</area>
+</areas>
+<puzzles>
+<SpawnPuzzle name="Spawn-Puzzle-1" spawnArea="dirt-1"/>
+<SpawnPuzzle name="Spawn-Puzzle-2" spawnArea="grass-2"/>
+<CombinePuzzle name="Combine-Puzzle-1" ingredient1="Spawn-Puzzle-1" ingredient2="Spawn-Puzzle-2" />
+<Output name="Output-1" input="Combine-Puzzle-1" requestName="frog" />
+</puzzles>
+</puzzleMap>

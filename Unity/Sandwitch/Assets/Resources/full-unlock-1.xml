@@ -1,0 +1,43 @@
+<puzzleMap>
+<areas>
+<area name="dirt-1" startArea="false">
+<door name="grass-1"/>
+<inputArea name="grass-1"/>
+</area>
+<area name="grass-1" startArea="true">
+<door name="grass-2"/>
+<door name="dirt-1"/>
+</area>
+<area name="grass-2" startArea="false">
+<door name="grass-1"/>
+<inputArea name="grass-1"/>
+</area>
+<area name="grass-3" startArea="false">
+<lockedDoor name="Door-Unlock-Puzzle-1"/>
+</area>
+<area name="dirt-2" startArea="false">
+<lockedDoor name="Door-Unlock-Puzzle-2"/>
+</area>
+<area name="grass-4" startArea="false">
+<lockedDoor name="Door-Unlock-Puzzle-3"/>
+</area>
+</areas>
+<puzzles>
+<SpawnPuzzle name="grass-1-spawn" spawnArea="grass-1"/>
+<SpawnPuzzle name="dirt-1-spawn" spawnArea="dirt-1"/>
+<SpawnPuzzle name="grass-2-spawn" spawnArea="grass-2"/>
+<SpawnPuzzle name="dirt-2-spawn" spawnArea="dirt-2"/>
+<SpawnPuzzle name="grass-3-spawn" spawnArea="grass-3"/>
+<Output name="Output" input="grass-4-spawn" requestName="None" />
+<DoorUnlockPuzzle name="Door-Unlock-Puzzle-1" source="dirt-1" dest="grass-3" key="OR-Block-1" />
+<DoorUnlockPuzzle name="Door-Unlock-Puzzle-2" source="grass-2" dest="dirt-2" key="Item-Request-Puzzle-2" />
+<SpawnPuzzle name="grass-4-spawn" spawnArea="grass-4"/>
+<DoorUnlockPuzzle name="Door-Unlock-Puzzle-3" source="dirt-2" dest="grass-4" key="Item-Request-Puzzle-1" />
+<CombinePuzzle name="Combine-Puzzle-3" ingredient1="grass-1-spawn" ingredient2="grass-2-spawn" />
+<ORBlock name="OR-Block-1" option1="Combine-Puzzle-3" option2="dirt-1-spawn" />
+<ItemRequestPuzzle name="Item-Request-Puzzle-1" requester="grass-1-spawn" requested="Property-Change-1" />
+<ItemRequestPuzzle name="Item-Request-Puzzle-2" requester="grass-2-spawn" requested="Insertion-Puzzle-1" />
+<PropertyChangePuzzle name="Property-Change-1" changer="dirt-2-spawn" changee="grass-3-spawn" />
+<InsertionPuzzle name="Insertion-Puzzle-1" boxee="dirt-1-spawn" box="grass-3-spawn" />
+</puzzles>
+</puzzleMap>

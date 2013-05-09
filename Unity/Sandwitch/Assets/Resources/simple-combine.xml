@@ -1,0 +1,14 @@
+<puzzleMap>
+<areas>
+<area name="Area-1" startArea="true"/>
+
+</areas>
+<puzzles>
+<CombinePuzzle name="Combine-Puzzle-1" ingredient1="Combine-Puzzle-2" ingredient2="Spawn-Puzzle-3" />
+<CombinePuzzle name="Combine-Puzzle-2" ingredient1="Spawn-Puzzle-1" ingredient2="Spawn-Puzzle-2" />
+<Output name="Output-1" input="Combine-Puzzle-1" requestName="None" />
+<SpawnPuzzle name="Spawn-Puzzle-1" spawnArea="Area-1"/>
+<SpawnPuzzle name="Spawn-Puzzle-2" spawnArea="Area-1"/>
+<SpawnPuzzle name="Spawn-Puzzle-3" spawnArea="Area-1"/>
+</puzzles>
+</puzzleMap>

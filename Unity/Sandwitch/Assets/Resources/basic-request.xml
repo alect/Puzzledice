@@ -1,0 +1,24 @@
+<puzzleMap>
+<areas>
+<area name="grass-1" startArea="true">
+<door name="kitchen-3"/>
+<door name="dirt-2"/>
+</area>
+<area name="dirt-2" startArea="false">
+<door name="grass-1"/>
+<inputArea name="grass-1"/>
+</area>
+<area name="kitchen-3" startArea="false">
+<door name="grass-1"/>
+<inputArea name="grass-1"/>
+</area>
+</areas>
+<puzzles>
+<SpawnPuzzle name="Spawn-Puzzle-1" spawnArea="grass-1"/>
+<SpawnPuzzle name="Spawn-Puzzle-2" spawnArea="dirt-2"/>
+<ItemRequestPuzzle name="Item-Request-Puzzle-1" requester="Spawn-Puzzle-1" requested="Property-Change-1" />
+<Output name="Output-1" input="Item-Request-Puzzle-1" requestName="staff" />
+<PropertyChangePuzzle name="Property-Change-1" changer="Spawn-Puzzle-3" changee="Spawn-Puzzle-2" />
+<SpawnPuzzle name="Spawn-Puzzle-3" spawnArea="kitchen-3"/>
+</puzzles>
+</puzzleMap>
