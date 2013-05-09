@@ -1,0 +1,15 @@
+*.csproj
+*.pidb
+*.sln
+.DS_Store
+Library/*
+Publish/*
+Temp/*
+*.userprefs
+*.unityproj
+TK2DROOT
+
+bin
+.metadata
+*~
+target/
