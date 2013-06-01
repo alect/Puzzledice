@@ -16,26 +16,18 @@ namespace puzzlegen.buildingblocks
 		// For propertychange puzzles we can specifically specify which property we want to change and to what
 		protected string _desiredPropertyName; 
 		protected object _desiredPropertyVal; 
-		// Can also specify whether we want the property change relationship produced by the puzzle to force 
-		// a mirror or not 
-		// TODO: FLAG figure out what the fuck that means?
-		protected bool _forceMirror;  
 		
 		public PropertyChangePuzzle(BuildingBlock changerInput, BuildingBlock changeeInput, 
-									string desiredPropertyName, object desiredPropertyVal, bool forceMirror) : base(new List<BuildingBlock>() { changerInput, changeeInput })
+									string desiredPropertyName, object desiredPropertyVal) : base(new List<BuildingBlock>() { changerInput, changeeInput })
 		{ 
 			_changerInput = changerInput; 
 			_changeeInput = changeeInput; 
 			_desiredPropertyName = desiredPropertyName; 
 			_desiredPropertyVal = desiredPropertyVal; 
-			_forceMirror = forceMirror; 
 		} 
-		public PropertyChangePuzzle(BuildingBlock changerInput, BuildingBlock changeeInput, string desiredPropertyName, object desiredPropertyVal) 
-			: this(changerInput, changeeInput, desiredPropertyName, desiredPropertyVal, false) 
-		{ 	
-		}
+
 		public PropertyChangePuzzle(BuildingBlock changerInput, BuildingBlock changeeInput) 
-			: this(changerInput, changeeInput, null, null, false)
+			: this(changerInput, changeeInput, null, null)
 		{
 		}
 		
