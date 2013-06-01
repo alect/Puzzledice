@@ -41,8 +41,6 @@ public class PlayState : MonoBehaviour {
 	// The generate game 
 	private ProcGame _currentGame; 
 	
-	// TODO: Undo Event Log
-	
 	// Player and room information 
 	private Player _player; 
 	public Player player { 
@@ -207,13 +205,11 @@ public class PlayState : MonoBehaviour {
 		_piecesToRemove = new List<GridPiece>(); 
 		_piecesToDestroy = new List<GridPiece>(); 
 		
-		// TODO: Test out basic level stuff here
 		_gridWidth = Globals.ROOM_WIDTH; 
 		_gridHeight = Globals.ROOM_HEIGHT; 
 		
 		
 		_currentGame = new ProcGame(); 
-		
 		
 		_currentRoom = _currentGame.startRoom; 
 		_player = _currentGame.player;
@@ -223,6 +219,7 @@ public class PlayState : MonoBehaviour {
 			piece.gameObject.SetActive(true);	
 		}
 		
+		// Begin the game
 		addPlayerText("Hungry...."); 
 	}
 	
@@ -324,10 +321,7 @@ public class PlayState : MonoBehaviour {
 		
 		_highlightedItem = null; 
 		
-		
-		
-		if (_currentState == GameState.RUN_STATE) { 
-			
+		if (_currentState == GameState.RUN_STATE) { 	
 			
 			// Before anything, check to see if we're at an exit 
 			if (!_player.moving) {
@@ -473,7 +467,6 @@ public class PlayState : MonoBehaviour {
 		_player.y = actualPos.y; 
 		_player.resetGridPos();
 		_player.roomStartPos = newPlayerGridPos; 
-		
 		
 		// Deactivate all the current room grid pieces
 		foreach (GridPiece piece in _gridPieces) { 

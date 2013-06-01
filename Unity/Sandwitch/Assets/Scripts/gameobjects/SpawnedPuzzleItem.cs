@@ -94,7 +94,7 @@ public class SpawnedPuzzleItem : GridPiece {
 
 	public override void init ()
 	{
-		// TODO: Do some fancy stuff with properties here to determine type, sprite image, 
+		// Do some fancy stuff with properties here to determine type, sprite image, 
 		// description, etc. 
 		if (_properties == null)
 			_properties = new Dictionary<string, object>(); 
@@ -124,7 +124,7 @@ public class SpawnedPuzzleItem : GridPiece {
 	public override void Update () {
 		base.Update(); 
 				
-		// TODO: Check for a mouse over 
+		// Check for a mouse over 
 		Vector3 mouseActualPos = tk2dCamera.inst.mainCamera.ScreenToWorldPoint(Input.mousePosition);
 		Vector2 mouseGridPos = PlayState.instance.toGridCoordinates(mouseActualPos.x-PlayState.instance.gridX, mouseActualPos.y-PlayState.instance.gridY); 
 		if (mouseGridPos == _gridPos) {
@@ -187,7 +187,7 @@ public class SpawnedPuzzleItem : GridPiece {
 		PlayState.instance.removeFromGrid(this); 
 		
 		
-		// Disable this item so it doesn't receive updates
+		// Disable this item so it doesn't receive updates while in a container
 		this.enabled = false; 
 	}
 	

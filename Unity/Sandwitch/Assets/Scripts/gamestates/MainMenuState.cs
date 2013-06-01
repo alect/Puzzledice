@@ -5,7 +5,6 @@ public class MainMenuState : MonoBehaviour {
 	
 	public static bool winState = false; 
 	
-	// Use this for initialization
 	void Start () {
 		tk2dTextMesh titleText = GameObject.Find("titletext").GetComponent<tk2dTextMesh>(); 
 		if (winState) {
@@ -17,7 +16,6 @@ public class MainMenuState : MonoBehaviour {
 		titleText.Commit(); 
 	}
 	
-	// Update is called once per frame
 	void Update () {
 		if (Input.GetKeyDown(KeyCode.Escape))
 			Application.Quit(); 
