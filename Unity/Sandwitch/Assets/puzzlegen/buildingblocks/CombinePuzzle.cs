@@ -38,7 +38,7 @@ namespace puzzlegen.buildingblocks
 				return false; 
 			} 
 			
-			// Now randomly shuffle our working combinations 
+			// Randomly shuffle our working combinations 
 			BuildingBlock.shuffle(filteredCombinations); 
 			// and try each combination 
 			foreach (KeyValuePair<string, string> itemPair in filteredCombinations) { 
@@ -91,7 +91,7 @@ namespace puzzlegen.buildingblocks
 			foreach (KeyValuePair<string, string> itemPair in workingCombinations) { 
 				// If the itemPairs aren't set up correctly, we should very justifiably crash here 
 				string itemName1 = itemPair.Key; 
-				string itemName2 = itemPair.Value as string; 
+				string itemName2 = itemPair.Value; 
 				
 				DBItem dbItem1 = Database.Instance.getItem(itemName1); 
 				DBItem dbItem2 = Database.Instance.getItem(itemName2); 

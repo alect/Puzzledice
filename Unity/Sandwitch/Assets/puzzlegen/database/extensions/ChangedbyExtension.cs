@@ -18,7 +18,7 @@ namespace puzzlegen.database
 					continue; 
 				
 				Dictionary<string, List<string>> changesDict = (Dictionary<string, List<string>>)dbItem.getProperty("changes");
-				// Now find each item we can change via the mutables property 
+				// Find each item we can change via the mutables property 
 				foreach (string propertyName in changesDict.Keys) { 
 					foreach (DBItem maybeChangee in db.getSpawnableItems()) { 
 						if (!maybeChangee.propertyExists("mutables"))

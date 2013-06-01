@@ -19,6 +19,7 @@ namespace puzzlegen
 		private string _name; 
 		public string Name { 
 			get { 
+				// A bit of a hack to get different keys to share the same name.
 				if (_properties.ContainsKey("key") && (bool)_properties["key"])
 					return _properties["keyname"] as string; 
 				else
@@ -27,6 +28,7 @@ namespace puzzlegen
 		}
 		
 		// To distinguish between different spawns of the same item
+		// Required for perfect solvability
 		private int _spawnIndex; 
 		public int SpawnIndex { 
 			get { 

@@ -18,7 +18,7 @@ namespace puzzlegen.buildingblocks
 		
 		public override bool outputHasContainer ()
 		{
-			// FLAG: For OR blocks, since we don't have control over which output they choose, 
+			// For OR blocks, since we don't have control over which output they choose, 
 			// both outputs have to have a container input for the or block to say it has a container input
 			return _option1.outputHasContainer() && _option2.outputHasContainer(); 
 		}

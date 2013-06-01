@@ -11,11 +11,7 @@ namespace puzzlegen.buildingblocks
 	public class InsertionPuzzle : BuildingBlock 
 	{
 		protected BuildingBlock _containerInput; 
-		protected BuildingBlock _itemToInsertInput;
-		
-		// used to generate requests (HACK)
-		protected string _itemToInsertName; 
-		protected string _boxName; 
+		protected BuildingBlock _itemToInsertInput; 
 		
 		public override int outputSpawnIndex ()
 		{
@@ -30,8 +26,6 @@ namespace puzzlegen.buildingblocks
 		
 		protected override bool spawnFilteredOutput (string outputName)
 		{
-			_itemToInsertName = null; 
-			_boxName = null; 
 			
 			if (_verbose) Debug.Log(string.Format("Generating Insertion puzzle for {0}", outputName)); 
 			if (!Database.Instance.itemExists(outputName)) { 
@@ -103,10 +97,6 @@ namespace puzzlegen.buildingblocks
 				// Add an insertion relationship here
 				InsertionRelationship insertionRelationship = new InsertionRelationship(fillerName, _itemToInsertInput.outputSpawnIndex(), outputName, _containerInput.outputSpawnIndex()); 
 				_relationshipsToSpawn.Add(insertionRelationship); 
-				
-				// For generating requests 
-				_itemToInsertName = fillerName; 
-				_boxName = outputName; 
 				
 				return true; 
 				

@@ -7,9 +7,6 @@ using puzzlegen.relationship;
 
 namespace puzzlegen.buildingblocks 
 { 
-	
-	
-	
 	public class UnboxingPuzzle : BuildingBlock
 	{
 		// The unboxing puzzle only has one input. The input for the container that contains the item 

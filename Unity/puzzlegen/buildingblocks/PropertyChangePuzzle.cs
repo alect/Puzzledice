@@ -19,15 +19,7 @@ namespace puzzlegen.buildingblocks
 		// Can also specify whether we want the property change relationship produced by the puzzle to force 
 		// a mirror or not 
 		// TODO: FLAG figure out what the fuck that means?
-		protected bool _forceMirror; 
-		
-		// Used to generate requests 
-		protected string _changeeName; 
-		protected string _requestPropertyName; 
-		protected object _requestPropertyVal; 
-		
-		
-		// TODO: Maybe implement this weird request puzzle stuff 
+		protected bool _forceMirror;  
 		
 		public PropertyChangePuzzle(BuildingBlock changerInput, BuildingBlock changeeInput, 
 									string desiredPropertyName, object desiredPropertyVal, bool forceMirror) : base(new List<BuildingBlock>() { changerInput, changeeInput })
@@ -59,9 +51,6 @@ namespace puzzlegen.buildingblocks
 		
 		protected override bool spawnFilteredOutput (string outputName)
 		{
-			_changeeName = null; 
-			_requestPropertyName = null; 
-			_requestPropertyVal = null; 
 			
 			if (_verbose) Debug.Log(string.Format("Generating Property Change Puzzle for {0}", outputName)); 
 			
@@ -230,9 +219,6 @@ namespace puzzlegen.buildingblocks
 			_relationshipsToSpawn.AddRange(changerInput.Relationships); 
 			PropertyChangeRelationship changeRelationship = new PropertyChangeRelationship(changeeName, _changeeInput.outputSpawnIndex(), changerName, _changerInput.outputSpawnIndex(), propertyName, propertyVal); 
 			_relationshipsToSpawn.Add(changeRelationship); 
-			_changeeName = changeeName; 
-			_requestPropertyName = propertyName; 
-			_requestPropertyVal = propertyVal; 
 		} 
 		
 		

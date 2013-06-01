@@ -27,11 +27,6 @@ namespace puzzlegen.database {
 			get { return _nextSpawnIndex++; }
 		}
 		
-		private List<string> _types; 
-		public List<string> types { 
-			get { return _types; }
-		}	
-		
 		private bool _abstract; 
 		public bool Abstract { 
 			get { return _abstract; }
@@ -43,7 +38,6 @@ namespace puzzlegen.database {
 			_className = className; 
 			_numSpawned = 0; 
 			_capacity = 1; 
-			_types = new List<string>(); 
 			_abstract = false; 
 			_properties = new Dictionary<string, object>(); 
 			_properties["classname"] = className; 
@@ -58,8 +52,8 @@ namespace puzzlegen.database {
 				_abstract = (bool)propertyVal; 
 			if (propertyName == "capacity" && (int)propertyVal > 0) 
 				_capacity = (int)propertyVal; 
-			else 
-				_properties[propertyName] = propertyVal; 
+			
+			_properties[propertyName] = propertyVal; 
 		}
 		
 		public object getProperty(string propertyName)
@@ -79,14 +73,6 @@ namespace puzzlegen.database {
 			return _properties.ContainsKey(propertyName); 
 		}
 		
-		public object getPropertyNoRecurs(string propertyName) 
-		{
-			if (_properties.ContainsKey(propertyName))
-				return _properties[propertyName];
-			else 
-				return null; 
-		}
-		
 		public DBItem copyToNewName(string newName) 
 		{
 			DBItem newDBItem = new DBItem(newName); 
@@ -98,9 +84,7 @@ namespace puzzlegen.database {
 		}
 		
 		public PuzzleItem spawnItem() 
-		{
-			Debug.Log("SPAWNING " + _className); 
-						
+		{				
 			_numSpawned++; 
 			
 			PuzzleItem itemToReturn = new PuzzleItem(_className); 
@@ -108,7 +92,7 @@ namespace puzzlegen.database {
 			if (_properties.ContainsKey("mutables"))
 				mutables = _properties["mutables"] as List<string>;
 			else 
-				mutables = new List<string>(); 
+				mutables = new List<string>();
 			
 			
 			// Copy properties from the dbitem to the output item 
