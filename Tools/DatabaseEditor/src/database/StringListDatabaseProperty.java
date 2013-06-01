@@ -17,25 +17,20 @@ public class StringListDatabaseProperty extends DatabaseProperty {
 	
 	@Override
 	public Object getTableElement() {
-		// TODO Auto-generated method stub
 		return this;
 	}
 
 	@Override
 	public void setTableElement(Object value) {
-		// TODO Auto-generated method stub
-
 	}
 
 	@Override
 	public boolean isTableElementEditable() {
-		// TODO Auto-generated method stub
 		return false;
 	}
 
 	@Override
 	public DatabaseProperty initializeInstance() {
-		// TODO Auto-generated method stub
 		return new StringListDatabaseProperty(_name);
 	}
 	

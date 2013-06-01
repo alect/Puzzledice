@@ -19,7 +19,7 @@ import org.w3c.dom.NodeList;
 import utils.StringPair;
 /**
  * 
- * @author GAMBIT
+ * @author Alec Thomson
  * Class representing a model of the database. 
  * Characterized by a list of DatabaseItems and DatabaseProperties
  * Interacts with the database views (list and table) to correctly represent the data. 1
@@ -44,7 +44,7 @@ public class DatabaseModel {
 	 * Returns true if the item was successfully added. Returns false otherwise (such as if the item name already exists in the database)
 	 * 
 	 * @param item the item to add to the database
-	 * @return
+	 * @return Whether the item was successfully inserted
 	 */
 	public boolean addItemToDatabase(DatabaseItem item) 
 	{

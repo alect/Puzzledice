@@ -233,12 +233,6 @@ public class WindowMain {
 		});
 		mnFile.add(mntmExit);
 		
-		JMenu mnEdit = new JMenu("Edit (TODO)");
-		menuBar.add(mnEdit);
-		
-		JMenuItem mntmUndo = new JMenuItem("Undo (TODO)");
-		mnEdit.add(mntmUndo);
-		
 		JMenu mnHelp = new JMenu("Help");
 		menuBar.add(mnHelp);
 		

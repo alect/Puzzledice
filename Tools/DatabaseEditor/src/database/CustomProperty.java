@@ -36,25 +36,20 @@ public class CustomProperty extends DatabaseProperty {
 	
 	@Override
 	public Object getTableElement() {
-		// TODO Auto-generated method stub
 		return this;
 	}
 
 	@Override
 	public void setTableElement(Object value) {
-		// TODO Auto-generated method stub
-
 	}
 
 	@Override
 	public boolean isTableElementEditable() {
-		// TODO Auto-generated method stub
 		return false;
 	}
 
 	@Override
 	public DatabaseProperty initializeInstance() {
-		// TODO Auto-generated method stub
 		DatabaseProperty[] copyArray = new DatabaseProperty[_subProperties.length];
 		for(int i = 0; i < copyArray.length; i++) {
 			copyArray[i] = _subProperties[i].initializeInstance();

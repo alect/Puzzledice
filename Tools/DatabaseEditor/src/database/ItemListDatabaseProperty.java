@@ -30,14 +30,11 @@ public class ItemListDatabaseProperty extends DatabaseProperty {
 	
 	@Override
 	public Object getTableElement() {
-		// TODO Auto-generated method stub
 		return this;
 	}
 
 	@Override
 	public void setTableElement(Object value) {
-		// TODO Auto-generated method stub
-
 	}
 	
 	@Override 
@@ -47,7 +44,6 @@ public class ItemListDatabaseProperty extends DatabaseProperty {
 
 	@Override
 	public DatabaseProperty initializeInstance() {
-		// TODO Auto-generated method stub
 		return new ItemListDatabaseProperty(_name); 
 	}
 	
