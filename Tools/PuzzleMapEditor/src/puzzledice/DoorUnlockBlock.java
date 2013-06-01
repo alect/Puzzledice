@@ -290,7 +290,6 @@ public class DoorUnlockBlock extends PuzzleBlock {
 	
 	@Override
 	public void update() {
-		// TODO Auto-generated method stub
 		_keySelect.setModel(new DefaultComboBoxModel(makeKeyList()));
 		if (_keyBlock == null)
 			_keySelect.setSelectedIndex(0);

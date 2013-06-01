@@ -169,8 +169,7 @@ public class PuzzleEditPanel extends JPanel {
 			public void actionPerformed(ActionEvent arg0) {
 				PuzzleBlock blockToAdd;
 				String puzzleType = (String)puzzleTypeSelect.getSelectedItem();
-				// a switch statement would be more useful here, but string-based switches are only available in Java SE 7,
-				// which isn't available for OSX yet, sooooooo....
+
 				if (puzzleType.equals("Output"))
 					blockToAdd = new OutputBlock();
 				else if (puzzleType.equals("Spawn Puzzle"))
@@ -281,7 +280,6 @@ public class PuzzleEditPanel extends JPanel {
 					
 					// Delete this block from the graph
 					mxGraph puzzleGraph = WindowMain.getPuzzleGraph();
-					Object parent = puzzleGraph.getDefaultParent();
 					
 					puzzleGraph.getModel().beginUpdate();
 					try

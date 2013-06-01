@@ -33,8 +33,6 @@ import java.util.Set;
 import javax.swing.event.ListSelectionListener;
 import javax.swing.event.ListSelectionEvent;
 
-import com.mxgraph.layout.mxGraphLayout;
-import com.mxgraph.layout.mxOrganicLayout;
 import com.mxgraph.view.mxGraph;
 
 import puzzledice.AreaBlock;
@@ -228,7 +226,7 @@ public class AreaEditPanel extends JPanel {
 					_startArea = areaToAdd;
 					areaToAdd.setStartArea(true);
 				}
-				//add this area to the graph layout
+				// add this area to the graph layout
 				mxGraph areaGraph = WindowMain.getAreaGraph();
 				Object parent = areaGraph.getDefaultParent();
 				
@@ -315,7 +313,6 @@ public class AreaEditPanel extends JPanel {
 				doorToRemove.removeDoor(currentArea);
 				
 				mxGraph areaGraph = WindowMain.getAreaGraph();
-				Object parent = areaGraph.getDefaultParent();
 				
 				areaGraph.getModel().beginUpdate();
 				try
@@ -367,7 +364,6 @@ public class AreaEditPanel extends JPanel {
 					
 					// Delete this area from the graph
 					mxGraph areaGraph = WindowMain.getAreaGraph();
-					Object parent = areaGraph.getDefaultParent();
 					
 					areaGraph.getModel().beginUpdate();
 					try
@@ -390,9 +386,6 @@ public class AreaEditPanel extends JPanel {
 						p.maybeRemoveRef(areaToDelete);
 					}
 				
-					
-					
-					
 					// If we can, want to select a new area in the list
 					if(areaListModel.size() >= 1)
 						areaList.setSelectedIndex(newIndex);
@@ -433,7 +426,6 @@ public class AreaEditPanel extends JPanel {
 	
 	private void maybeChangeAreaName(String newAreaName, int selectedIndex) 
 	{
-		// TODO: Implement this function
 		AreaBlock currentArea = (AreaBlock)areaListModel.get(selectedIndex);
 		if(newAreaName.equals(currentArea.getName()))
 			return;
@@ -541,9 +533,7 @@ public class AreaEditPanel extends JPanel {
 	// For creating the acyclic puzzle graph representation of areas 
 	public static void buildAreaPuzzleGraph() { 
 		
-		
 		AreaBlock[] areaList = getAreaList(); 
-		
 		// First, remove any edge connections so we can start anew
 		for (AreaBlock area : areaList) { 
 			area.removePuzzleEdges();

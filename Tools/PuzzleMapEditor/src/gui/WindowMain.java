@@ -6,7 +6,6 @@ import java.awt.FileDialog;
 import java.awt.Rectangle;
 import java.awt.Toolkit;
 
-import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.BoxLayout;
 import javax.swing.JOptionPane;
@@ -17,9 +16,7 @@ import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
 
 import java.awt.Component;
-//import org.eclipse.wb.swing.FocusTraversalOnArray;
 import javax.swing.JTabbedPane;
-import javax.swing.JLabel;
 import javax.swing.JMenuBar;
 import javax.swing.JMenu;
 import java.awt.BorderLayout;
@@ -33,13 +30,8 @@ import javax.swing.KeyStroke;
 import java.awt.event.KeyEvent;
 import javax.swing.JSeparator;
 
-import com.mxgraph.layout.mxCircleLayout;
-import com.mxgraph.layout.mxCompactTreeLayout;
 import com.mxgraph.layout.mxGraphLayout;
 import com.mxgraph.layout.mxOrganicLayout;
-import com.mxgraph.layout.mxParallelEdgeLayout;
-import com.mxgraph.layout.mxPartitionLayout;
-import com.mxgraph.layout.mxStackLayout;
 import com.mxgraph.layout.hierarchical.mxHierarchicalLayout;
 import com.mxgraph.model.mxCell;
 import com.mxgraph.swing.mxGraphComponent;
@@ -47,16 +39,12 @@ import com.mxgraph.swing.util.mxMorphing;
 import com.mxgraph.util.mxEventObject;
 import com.mxgraph.util.mxEvent;
 import com.mxgraph.util.mxEventSource.mxIEventListener;
-import com.mxgraph.util.mxRectangle;
 import com.mxgraph.view.mxGraph;
-import javax.swing.JTextPane;
 import java.awt.event.ComponentAdapter;
 import java.awt.event.ComponentEvent;
-import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.MappedByteBuffer;
@@ -83,7 +71,6 @@ public class WindowMain {
 	
 	JTabbedPane graphPanel;
 	
-	private static JLabel lblTextPanel;
 	private static JTextArea txtTextPanel;
 	
 	private File _openFile;
@@ -101,6 +88,7 @@ public class WindowMain {
 		catch (Exception e) {}
 		
 		EventQueue.invokeLater(new Runnable() {
+			@SuppressWarnings("static-access")
 			public void run() {
 				try {
 					WindowMain window = new WindowMain();
@@ -225,13 +213,6 @@ public class WindowMain {
 		});
 		mnFile.add(mntmExit);
 		
-		JMenu mnEdit = new JMenu("Edit");
-		menuBar.add(mnEdit);
-		
-		JMenuItem mntmUndo = new JMenuItem("Undo (TODO)");
-		mnEdit.add(mntmUndo);
-		
-		
 		JMenu mnHelp = new JMenu("Help");
 		menuBar.add(mnHelp);
 		
@@ -269,7 +250,6 @@ public class WindowMain {
 		
 		graphPanel = new JTabbedPane(JTabbedPane.TOP);
 		graphPanel.setPreferredSize(new Dimension(frmPuzzledicePuzzleEditor.getBounds().width, frmPuzzledicePuzzleEditor.getBounds().height));
-		//graphPanel.setPreferredSize(new Dimension(Integer.MAX_VALUE, Integer.MAX_VALUE));
 		panel.add(graphPanel);
 		graphPanel.setAlignmentY(Component.TOP_ALIGNMENT);
 		
@@ -287,7 +267,6 @@ public class WindowMain {
 		});
 		areaGraphComponent.setEnabled(false);
 		areaGraphLayout = new mxOrganicLayout(areaGraph, new Rectangle(0, 0, graphPanel.getBounds().width, graphPanel.getBounds().height));
-		//areaGraphLayout.setDisableEdgeStyle(false);
 		
 		areaGraph.setEnabled(false);
 		
@@ -311,14 +290,12 @@ public class WindowMain {
 		
 		
 		graphPanel.addTab("Puzzle Graph", null, puzzleGraphComponent, null);
-		//textPanel.addTab("Text Panel 1", null, lblTextPanel, null);
 		txtTextPanel = new JTextArea("Textual description");
 		panel.add(txtTextPanel);
 		txtTextPanel.setLineWrap(true);
 		txtTextPanel.setWrapStyleWord(true);
 		txtTextPanel.setEditable(false);
 		
-		lblTextPanel = new JLabel("Textual description");
 		frmPuzzledicePuzzleEditor.addComponentListener(new ComponentAdapter() {
 			@Override
 			public void componentResized(ComponentEvent arg0) {
@@ -364,7 +341,6 @@ public class WindowMain {
 		areaGraph.setAutoSizeCells(true);
 		areaGraphComponent.setGraph(areaGraph);
 		areaGraphLayout = new mxOrganicLayout(areaGraph, new Rectangle(0, 0, graphPanel.getBounds().width, graphPanel.getBounds().height));
-		//areaGraphLayout.setDisableEdgeStyle(false);
 		areaGraph.setEnabled(false);
 		
 		puzzleGraph = new mxGraph();
